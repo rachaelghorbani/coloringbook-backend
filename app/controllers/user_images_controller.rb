@@ -27,6 +27,6 @@ class UserImagesController < ApplicationController
 
     private
     def user_image_params
-        params.require(:user_image).permit(:user_id, :image_id, :fill_colors)
+        params.require(:user_image).permit(:user_id, :image_id, :fill_colors => [])
     end
 end
