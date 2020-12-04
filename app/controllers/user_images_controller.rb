@@ -25,6 +25,12 @@ class UserImagesController < ApplicationController
         end
     end
 
+    def destroy 
+        user_image = UserImage.find(params[:id])
+        user_image.destroy
+        render json: user_image
+    end
+    
     private
     def user_image_params
         params.require(:user_image).permit(:user_id, :image_id, :fill_colors => [])
